@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum Desk — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <p class="kicker">Grand Theft Auto VI · PlayStation 5 · 55 trophies</p>
+      <h1>Leonida Platinum Desk</h1>
+      <p class="tagline">The complete trophy guide and tracker: every official trophy, a roadmap to the
+      platinum, the missables flagged, and a cited guide for each one. Works fully offline —
+      your progress never leaves this browser.</p>
+    </div>
+    <section class="scoreboard" aria-label="Your progress">
+      <div class="score-top">
+        <span class="score-big"><span id="stat-earned">0</span><span class="score-of">/55</span></span>
+        <span class="score-pct" id="stat-pct">0%</span>
+      </div>
+      <div class="bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55">
+        <div class="bar-fill" id="stat-bar"></div>
+      </div>
+      <p class="score-points"><span id="stat-points">0</span> of 1,350 PSN points</p>
+      <ul class="grade-chips" id="stat-grades"></ul>
+    </section>
+  </div>
+</header>
+
+<nav class="toolbar" aria-label="Views and filters">
+  <div class="toolbar-inner">
+    <div class="tabs" role="tablist" aria-label="Views">
+      <button class="tab is-active" id="tab-checklist" data-view="checklist" role="tab">Checklist</button>
+      <button class="tab" id="tab-roadmap" data-view="roadmap" role="tab">Roadmap</button>
+      <button class="tab" id="tab-missables" data-view="missables" role="tab">Missables <span class="tab-badge" id="missable-count"></span></button>
+    </div>
+    <div class="tools">
+      <label class="search">
+        <span class="visually-hidden">Search trophies</span>
+        <input type="search" id="search" placeholder="Search name or description…">
+      </label>
+      <label class="select-wrap">Grade
+        <select id="grade-filter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="unearned-only">
+        <span>Unearned only</span>
+      </label>
+      <label class="switch spoiler-switch">
+        <input type="checkbox" id="spoiler-toggle">
+        <span><strong>Spoiler shield</strong> — hide story trophies until earned</span>
+      </label>
+    </div>
+    <div class="kind-chips" id="kind-chips" role="group" aria-label="Filter by kind"></div>
+    <div class="save-tools">
+      <button id="export-btn" type="button">Export progress</button>
+      <label class="import-label">Import progress
+        <input type="file" id="import-file" accept="application/json,.json" hidden>
+      </label>
+      <button id="reset-btn" type="button" class="danger">Reset</button>
+      <span class="save-note" id="save-note" role="status"></span>
+    </div>
+  </div>
+</nav>
+
+<main class="layout">
+  <div class="main-column">
+    <section class="next-up" id="next-up" aria-label="Next up">
+      <h2>Next up</h2>
+      <p class="next-up-sub">The next unearned trophies in roadmap order — clear these and the platinum takes care of itself.</p>
+      <ol class="next-up-list" id="next-up-list"></ol>
+    </section>
+
+    <section id="view-checklist" class="view">
+      <p class="result-count" id="result-count"></p>
+      <ol class="trophy-list" id="trophy-list"></ol>
+      <p class="empty-note" id="empty-note" hidden>No trophy matches those filters. Loosen the search or pick another kind.</p>
+    </section>
+
+    <section id="view-roadmap" class="view" hidden>
+      <div class="view-intro">
+        <h2>Roadmap to the platinum</h2>
+        <p>Nine stages, built from the official descriptions: the campaign in chapter order first, then the
+        stranger strands, then Leonida's pastimes and feats, then the long collections and counts, and finally
+        100% completion. Stages can overlap in play — this is the order that wastes the least travel.</p>
+      </div>
+      <div id="roadmap-body"></div>
+    </section>
+
+    <section id="view-missables" class="view" hidden>
+      <div class="view-intro">
+        <h2>Missables — read before the finale</h2>
+        <p>Three trophies on the official list are tied to a specific moment or place the descriptions do not
+        promise you can revisit. Each warning below says exactly what is known and what is not — no invented
+        steps. Everything else on the list can be earned whenever you like.</p>
+      </div>
+      <div id="missables-body"></div>
+    </section>
+  </div>
+
+  <aside class="guide-pane" id="guide-pane" aria-label="Trophy guide">
+    <div class="guide-empty" id="guide-empty">
+      <h2>Pick a trophy</h2>
+      <p>Select any trophy in the checklist to read its full guide here: what to do, when it can be missed,
+      its roadmap stage, and the sources every claim is drawn from.</p>
+      <p class="guide-empty-note">A note on honesty: this guide is written from the official trophy
+      descriptions. Where a description does not pin a detail down, the guide says so instead of inventing one.</p>
+    </div>
+    <article class="guide-card" id="guide-card" hidden></article>
+  </aside>
+</main>
+
+<footer class="colophon">
+  <p><strong>Leonida Platinum Desk</strong> — an unofficial, fan-made guide. Trophy names, descriptions and
+  grades are the official PlayStation 5 list as published; guide text is our own work and cites its sources
+  on every trophy.</p>
+  <p>Progress is stored only in this browser (localStorage). Export it before you clear your browser data.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
